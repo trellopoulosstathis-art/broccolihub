@@ -7,13 +7,7 @@ local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 
 local TOGGLE_KEY = Enum.KeyCode.Tab
-local PANEL_NAME = "Broccoli Universal v1.0.1"
-
-local ADMINS = {
-	[1234567890] = true, -- replace with your UserId
-}
-
-if not ADMINS[player.UserId] then return end
+local PANEL_NAME = "Broccoli Universal FE v1.0.1"
 
 pcall(function()
 	StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.PlayerList, false)
@@ -223,7 +217,7 @@ local function getNearestPlayer()
 end
 
 ------------------------------------------------------------
--- ESP + Distance (Rivals style)
+-- ESP + Distance
 ------------------------------------------------------------
 local function clearESP(target)
 	if highlights[target] then
@@ -398,7 +392,7 @@ end)
 -- Autolock camera
 ------------------------------------------------------------
 RunService:BindToRenderStep(
-	"PetersUniversalAutoLock",
+	"BroccoliUniversalAutoLock",
 	Enum.RenderPriority.Camera.Value + 1,
 	function()
 		if not autoLock then return end
@@ -642,4 +636,5 @@ UserInputService.InputBegan:Connect(function(key, processed)
 	end
 end)
 
-print("Broccoli Universal Loaded")
+notify("Broccoli Universal FE v1.0.1 loaded. Tab to toggle.")
+print("Broccoli Universal FE v1.0.1 loaded!")
